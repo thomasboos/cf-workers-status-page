@@ -2,7 +2,7 @@ settings:
   title: 'Status Page'
   url: 'https://status.tclb.cc' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -20,27 +20,39 @@ monitors:
     url: 'https://www.tclb.cc/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
 
-  - id: pihole-tclb-cc
-    name: pihole.tclb.cc
-    url: 'https://pihole.tclb.cc/admin/'
+  - id: google-com
+    name: Google
+    url: 'https://www.google.com/'
     method: GET
     expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
 
   - id: go-tclb-cc
     name: YOURLS
     url: 'https://go.tclb.cc/'
     method: GET
     expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
 
   - id: dash-tclb-cc
     name: Dashboard tclb.cc
     url: 'https://dash.tclb.cc/'
     method: GET
     expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
     
   - id: rss-tclb-cc
     name: FreshRSS
     url: 'https://rss.tclb.cc/'
     method: GET
     expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
+
+  - id: grafana-tclb-cc
+    name: Grafana
+    url: 'https://grafana.tclb.cc/'
+    method: GET
+    expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
