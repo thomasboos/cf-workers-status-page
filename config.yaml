@@ -2,7 +2,7 @@ settings:
   title: 'Status Page'
   url: 'https://status.tclb.cc' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 30 # number of days you want to display in histogram
+  daysInHistogram: 60 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -15,18 +15,18 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: tclb-cc # unique identifier
-    name: www.tclb.cc
-    url: 'https://www.tclb.cc/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-
   - id: google-com
     name: Google
     url: 'https://www.google.com/'
     method: GET
     expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
+    
+  - id: tclb-cc # unique identifier
+    name: www.tclb.cc
+    url: 'https://www.tclb.cc/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
 
   - id: go-tclb-cc
@@ -38,21 +38,21 @@ monitors:
 
   - id: dash-tclb-cc
     name: Dashboard tclb.cc
-    url: 'https://dash.tclb.cc/'
+    url: 'https://dash.tclb.cc/login/'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
     
   - id: rss-tclb-cc
     name: FreshRSS
-    url: 'https://rss.tclb.cc/'
+    url: 'https://rss.tclb.cc/p/i/'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
 
   - id: grafana-tclb-cc
     name: Grafana
-    url: 'https://grafana.tclb.cc/'
+    url: 'https://grafana.tclb.cc/login/'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
