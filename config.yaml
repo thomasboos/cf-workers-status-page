@@ -15,13 +15,6 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: google-com
-    name: Google
-    url: 'https://www.google.com/'
-    method: GET
-    expectStatus: 200
-    followRedirect: true # should fetch follow redirects, default=false
-    
   - id: tclb-cc # unique identifier
     name: www.tclb.cc
     url: 'https://www.tclb.cc/' # URL to fetch
@@ -38,21 +31,21 @@ monitors:
 
   - id: dash-tclb-cc
     name: Dashboard tclb.cc
-    url: 'https://dash.tclb.cc/login/'
+    url: 'https://dash.tclb.cc/login'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
     
   - id: rss-tclb-cc
     name: FreshRSS
-    url: 'https://rss.tclb.cc/p/i/'
+    url: 'https://rss.tclb.cc/'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
 
   - id: grafana-tclb-cc
     name: Grafana
-    url: 'https://grafana.tclb.cc/login/'
+    url: 'https://grafana.tclb.cc/login'
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
