@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.tclb.cc' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,23 +15,32 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: tclb-cc # unique identifier
+    name: www.tclb.cc
+    url: 'https://www.tclb.cc/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: pihole-tclb-cc
+    name: pihole.tclb.cc
+    url: 'https://pihole.tclb.cc/admin/'
     method: GET
     expectStatus: 200
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: go-tclb-cc
+    name: YOURLS
+    url: 'https://go.tclb.cc/'
+    method: GET
+    expectStatus: 200
+
+  - id: dash-tclb-cc
+    name: Dashboard tclb.cc
+    url: 'https://dash.tclb.cc/'
+    method: GET
+    expectStatus: 200
+    
+  - id: rss-tclb-cc
+    name: FreshRSS
+    url: 'https://rss.tclb.cc/'
     method: GET
     expectStatus: 200
