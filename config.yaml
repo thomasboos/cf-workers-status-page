@@ -49,3 +49,17 @@ monitors:
     method: GET
     expectStatus: 200
     followRedirect: true # should fetch follow redirects, default=false
+    
+  - id: pihole-tclb-cc
+    name: PiHole
+    url: 'https://pihole.tclb.cc/admin/api.php'
+    method: GET
+    expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
+
+  - id: nextcloud-tclb-cc
+    name: Nextcloud
+    url: 'https://cloud.tclb.cc/ocs/v2.php/apps/serverinfo/api/v1/info'
+    method: GET
+    expectStatus: 200
+    followRedirect: true # should fetch follow redirects, default=false
